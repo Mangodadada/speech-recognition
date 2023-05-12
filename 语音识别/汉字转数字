@@ -1,0 +1,18 @@
+import cn2an
+
+print(cn2an.cn2an("一百二十三"))  # 默认为strict模式，需要严格符合数字拼写才可以转化
+# 123
+
+print(cn2an.cn2an("一二三", "normal"))  # normal模式，可以转化一二三
+# 123
+
+print(cn2an.cn2an("1百23", "smart"))  # smart模式，可以转化混合拼写的1百23
+# 123
+
+print(cn2an.cn2an("负一百二十三", "strict"))  # 以上三种模式均支持负数
+# -123
+
+print(cn2an.cn2an("一点二三", "strict"))  # 以上三种模式均支持小数
+# 1.23
+num = cn2an.cn2an("一点二三", "strict")
+print(num+2)
